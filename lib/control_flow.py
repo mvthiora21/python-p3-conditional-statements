@@ -1,17 +1,60 @@
 #!/usr/bin/env python3
 
 def admin_login(username, password):
-    # your code here
-    pass
+    if (username == "admin" or username == "ADMIN") and password == "12345":
+        return "Access granted"
+    else:
+        return "Access denied"
 
+
+# def hows_the_weather(temperature):
+#     if temperature < 40:
+#         return f"It's brisk out there at {temperature}°F!"
+#     elif 40 <= temperature <= 65:
+#         return f"It's a little chilly out there at {temperature}°F!"
+#     elif temperature > 85:
+#         return f"It's too dang hot out there at {temperature}°F!"
+#     else:
+#         return f"It's perfect out there at {temperature}°F!"
+        
 def hows_the_weather(temperature):
-    # your code here
-    pass
-
+    if temperature < 40:
+        return "It's brisk out there!"
+    elif 40 <= temperature <= 65:
+        return "It's a little chilly out there!"
+    elif temperature > 85:
+        return "It's too dang hot out there!"
+    else:
+        return "It's perfect out there!"
+    
 def fizzbuzz(num):
-    # your code here
-    pass
+    if num % 3 == 0 and num % 5 == 0:
+        return 'FizzBuzz'
+    elif num % 3 == 0:
+        return 'Fizz'
+    elif num % 5 == 0:
+        return 'Buzz'
+    else:
+        return num
 
 def calculator(operation, num1, num2):
-    # your code here
-    pass
+    # Defining valid operations
+    valid_operations = ['+', '-', '*', '/']
+    
+    if operation not in valid_operations:
+        print("Invalid operation!")
+        return None
+    
+    # Perform calculations based on input operations
+    if operation == '+':
+        result = num1 + num2
+    elif operation == '-':
+        result = num1 - num2
+    elif operation == '*':
+        result = num1 * num2
+    elif operation == '/':
+        if num2 == 0:
+            return "Cannot divide numbers by zero!"
+        result = num1 / num2
+    
+    return result
